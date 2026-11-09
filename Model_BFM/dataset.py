@@ -1,14 +1,13 @@
 import torch
 from pathlib import Path
-from confige import block_size, batch_size
+from .confige import block_size, batch_size
 
 # - FILE: text.txt -
-BASE_DIR = Path(__file__).parent
+BASE_DIR = Path(__file__).parent.parent
 DATA_PATH = BASE_DIR / "data" / "text.txt"
 text = DATA_PATH.read_text(encoding='utf-8')
 
 # - DEVICE
-
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # - DICTIONARY and SORTING
